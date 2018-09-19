@@ -2,9 +2,9 @@
 
 module.exports = {
     'env': {
-        'browser': true,
-        'commonjs': true,
-        'es6': true
+        'browser': false,
+        'commonjs': false,
+        'es6': false
     },
     'extends': ['plugin:vue-libs/recommended'],
     'parserOptions': {
