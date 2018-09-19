@@ -13,11 +13,16 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
     "bootstrap-vue": "^2.0.0-rc.8",
     "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
+    "free-google-image-search": "^1.0.0",
+    "google-images": "^2.1.0",
+    "lodash.debounce": "^4.0.8",
     "moment": "^2.11.1",
     "npm": "^6.0.0",
     "vue": "^2.5.2",
@@ -25,7 +30,8 @@
     "vue-clickaway": "^2.2.2",
     "vue-numeric": "^2.3.0",
     "vue-perfect-scrollbar": "^0.1.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "webpack-jquery-ui": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.3.0",
