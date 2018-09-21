@@ -10,7 +10,7 @@
             <main class="div__div__main">
                 <img class="div__div__main__img" v-bind:alt=word v-bind:src=image>
                 <div class="div__div__main__div div__div__main__div--word">
-                    {{wordPlace}}
+                    &nbsp;{{wordPlace}}
                 </div>
                 <div class="div__div__main__div">
                     <div class="div__div__main__div__div" v-for="(word, index) in word" v-bind:data-position="index">
@@ -30,21 +30,27 @@
         wordPlace: '',
         image: decodeURI(this.$route.params.url)
       };},
+        methods: {
+          refreshWord() {
+
+          }
+        },
       mounted () {
           let self = this;
           $('.div__div__div--letter').draggable();
+
           $('.div__div__main__div__div').droppable({
               accept: '.div__div__div--letter',
-              greedy: true,
               drop (event, ui) {
-                 let letter = $(ui.draggable).html();
-                 letter = letter.trim();
-                 self.wordPlace += letter;
+                  ui.draggable.position({
+                      my: "center",
+                      at: "cente r",
+                      of: $(this),
+                      using(pos) {
+                          $(this).animate(pos, 200, "linear");
+                      }
+                  });
               },
-              over(event, ui) {
-                  let index = parseInt($(this).attr('data-position'));
-                  console.log(index);
-              }
           });
       }
     };
@@ -116,5 +122,6 @@
     .div__div__main__div--word
     {
         color: #FFFFFF;
+        font-size: 70px;
     }
 </style>
